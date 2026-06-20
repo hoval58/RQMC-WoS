@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+results_gasket_array/
+plots_gasket/
+
+*.pickle
+*.pkl
+
+.venv/
+.ipynb_checkpoints/
