@@ -1,2 +1,2 @@
-# RQMC-WoS
-Walk-on-Spheres estimators using RQMC point sets
+# Randomized Quasi-Monte Carlo for Walk-on-Spheres (WoS)
+
