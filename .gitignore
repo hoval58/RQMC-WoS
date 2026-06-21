@@ -1,11 +1,20 @@
 __pycache__/
 *.pyc
 
-results_gasket_array/
-plots_gasket/
+.venv/
+.ipynb_checkpoints/
 
 *.pickle
 *.pkl
 
-.venv/
-.ipynb_checkpoints/
+results_gasket_array/
+results_unit_disk_array/
+results_dumbbell_array/
+results_pacman_array/
+results_unit_sphere_array/
+
+plots_gasket/
+plots_unit_disk/
+plots_dumbbell/
+plots_pacman/
+plots_unit_sphere/
