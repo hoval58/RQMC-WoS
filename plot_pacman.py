@@ -5,17 +5,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# Same N values as in run_unit_disk_experiments.py
 N_list = 2 ** np.arange(2, 10)
 
-# Same starting point as in run_unit_disk_experiments.py
-x_0 = (0.0, 0.5)
-
-# Exact value of the solution at x_0
-ref_value = 0.5 * np.log((x_0[0] - 2) ** 2 + x_0[1] ** 2)
-
-results_dir = Path("results_unit_disk_array")
-plots_dir = Path("plots_unit_disk")
+results_dir = Path("results_pacman_array")
+plots_dir = Path("plots_pacman")
 plots_dir.mkdir(exist_ok=True)
 
 
@@ -56,12 +49,17 @@ mse_lattice_all = []
 mse_sobol_array_all = []
 mse_lattice_array_all = []
 
+ref_value = None
+
 
 for N in N_list:
     filename = results_dir / f"N={int(N)}.pickle"
 
     with filename.open("rb") as file:
         results = pickle.load(file)
+
+    if ref_value is None:
+        ref_value = results["ref_value"]
 
     mc_estimates = np.array(results["mc_estimates"])
     sobol_estimates = np.array(results["qmc_sobol_estimates"])
@@ -107,17 +105,17 @@ plt.loglog(N_list, var_lattice_all, "o-", label="Lattice", markerfacecolor='none
 plt.loglog(N_list, var_sobol_array_all, "s-", label="Array-Sobol")
 plt.loglog(N_list, var_lattice_array_all, "o-", label="Array-Lattice")
 
-# Pooled reference slope using the two array-RQMC curves
+# Pooled reference slopes
 pooled_power_fit(var_sobol_all, var_lattice_all, start_idx=5)
 pooled_power_fit(var_sobol_array_all, var_lattice_array_all, start_idx=5)
 
 plt.xlabel("N")
 plt.ylabel("Variance")
-plt.title("Unit disk WOS variance")
+plt.title("Pacman WOS variance")
 plt.legend()
 plt.tight_layout()
 
-variance_plot = plots_dir / "unit_disk_variance.png"
+variance_plot = plots_dir / "pacman_variance.png"
 plt.savefig(variance_plot, dpi=300)
 plt.show()
 
@@ -131,18 +129,17 @@ plt.loglog(N_list, mse_lattice_all, "o-", label="Lattice", markerfacecolor='none
 plt.loglog(N_list, mse_sobol_array_all, "s-", label="Array-Sobol")
 plt.loglog(N_list, mse_lattice_array_all, "o-", label="Array-Lattice")
 
-# Pooled reference slope using the two array-RQMC MSE curves
-
+# Pooled reference slopes
 pooled_power_fit(mse_sobol_all, mse_lattice_all, start_idx=5)
 pooled_power_fit(mse_sobol_array_all, mse_lattice_array_all, start_idx=5)
 
 plt.xlabel("N")
 plt.ylabel("MSE")
-plt.title("Unit disk WOS MSE")
+plt.title("Pacman WOS MSE")
 plt.legend()
 plt.tight_layout()
 
-mse_plot = plots_dir / "unit_disk_mse.png"
+mse_plot = plots_dir / "pacman_mse.png"
 plt.savefig(mse_plot, dpi=300)
 plt.show()
 

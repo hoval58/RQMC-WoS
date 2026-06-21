@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# Same N range as in the experiments
-N_list = 2 ** np.arange(2, 10)
+N_list = 2 ** np.arange(2, 10) 
 
 
 plots_dir = Path("plots_gasket")
@@ -22,7 +21,7 @@ def pooled_power_fit(y1, y2, start_idx=5): # for the pooled reference line
 
     mask = np.isfinite(y_fit) & (y_fit > 0)
 
-    # Fit log(y) = a + b log(N)
+
     b, a = np.polyfit(np.log(N_fit[mask]), np.log(y_fit[mask]), 1)
 
     C = np.exp(a)
@@ -38,7 +37,7 @@ def pooled_power_fit(y1, y2, start_idx=5): # for the pooled reference line
     return b, C
 
 
-# Lists for variances
+
 var_mc_all = []
 var_sobol_all = []
 var_lattice_all = []
@@ -47,7 +46,7 @@ var_lattice_array_all = []
 
 
 
-# Read the pickle files
+
 for N in N_list:
     with open(f"results_gasket_array/N={int(N)}.pickle", "rb") as file:
         results = pickle.load(file)
@@ -56,17 +55,16 @@ for N in N_list:
     sobol_estimates = np.array(results["qmc_sobol_estimates"])
     lattice_estimates = np.array(results["qmc_lattice_estimates"])
 
-    # If your file uses the names qmc_sobol_estimates_array_fresh and
-    # qmc_lattice_estimates_array_fresh instead, replace the two keys below.
+
     sobol_array_estimates = np.array(results["qmc_sobol_estimates_array"])
     lattice_array_estimates = np.array(results["qmc_lattice_estimates_array"])
 
-    # Standard methods
+    # MC and Plain RQMC
     var_mc_all.append(np.var(mc_estimates))
     var_sobol_all.append(np.var(sobol_estimates))
     var_lattice_all.append(np.var(lattice_estimates))
 
-    # Array methods
+    # Array RQMC
     var_sobol_array_all.append(np.var(sobol_array_estimates))
     var_lattice_array_all.append(np.var(lattice_array_estimates))
 
@@ -89,12 +87,13 @@ var_lattice_array_all = np.array(var_lattice_array_all)
 plt.figure(figsize=(7, 5))
 
 plt.plot(N_list, var_mc_all, marker="^", linestyle="-", label="MC")
-plt.plot(N_list, var_sobol_all, marker="s", linestyle="-", label="Sobol")
-plt.plot(N_list, var_lattice_all, marker="o", linestyle="-", label="Lattice")
-plt.plot(N_list, var_sobol_array_all, marker="s", linestyle="-", label="Sobol array")
-plt.plot(N_list, var_lattice_array_all, marker="o", linestyle="-", label="Lattice array")
+plt.plot(N_list, var_sobol_all, marker="s", linestyle="-", label="Sobol",markerfacecolor='none')
+plt.plot(N_list, var_lattice_all, marker="o", linestyle="-", label="Lattice", markerfacecolor='none')
+plt.plot(N_list, var_sobol_array_all, marker="s", linestyle="-", label="Array-Sobol")
+plt.plot(N_list, var_lattice_array_all, marker="o", linestyle="-", label="Array-Lattice")
 
 # Pooled reference slope using the two array-RQMC variance curves
+pooled_power_fit(var_sobol_all, var_lattice_all, start_idx=5)
 pooled_power_fit(var_sobol_array_all, var_lattice_array_all, start_idx=5)
 
 plt.legend()
