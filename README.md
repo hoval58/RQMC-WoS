@@ -17,6 +17,7 @@ Main domain scripts include:
 `unit_sphere_array_rqmc.py`
 
 Experiment scripts include files such as:
+`run_gasket_experiments.py`
 `run_unit_disk_experiments.py`
 `run_dumbbell_experiments.py`
 `run_pacman_experiments.py`
@@ -26,7 +27,9 @@ The experiments in these files are run for sample sizes ranging from $4$ to $2^9
 
 
 Plotting scripts include files such as:
+`plot_gasket.py`
 `plot_unit_disk.py`
+`plot_dumbbell.py`
 `plot_pacman.py`
 `plot_unit_sphere.py`
 
