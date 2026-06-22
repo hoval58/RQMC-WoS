@@ -8,6 +8,7 @@ It also contains the code used to compute the column-wise total Sobol indices fo
 
 ## Contents
 The repository includes simulation, experiment-running, plotting, and Sobol indices computation. 
+
 Main domain scripts include:
 `gasket_array_rqmc.py`
 `unit_disk_array_rqmc.py`
@@ -19,7 +20,7 @@ Experiment scripts include files such as:
 `run_dumbbell_experiments.py`
 `run_pacman_experiments.py`
 `run_unit_sphere_experiments.py`
-The experiments in thes files are run for sample sizes ranging from 4 to 2^9, but the user can extend the range of sample sizes by modifying `N_list`.
+The experiments in thes files are run for sample sizes ranging from $4$ to $2^9$, but the user can extend the range of sample sizes by modifying `N_list`.
 
 Plotting scripts include files such as:
 `plot_unit_disk.py`
@@ -48,11 +49,7 @@ The required packages are listed in `requirements.txt`.
 
 ## Korobov Lattice generator files
 Some scripts use precomputed LatNet Builder Korobov lattice generators stored as JSON files.
-To run Array-RQMC for the gasket, dumbbell and unit disk examples, place
-```text
-korobov_generators_dim2.json
-```
-in the same folder as the running scripts.
+To run Array-RQMC for the gasket, dumbbell and unit disk examples, place `korobov_generators_dim2.json` in the same folder as the running scripts.
 For the unit sphere and pacman examples, place `korobov_generators_dim3.json` and `korobov_generators_dim4.json`, respectively, in the same folder as the corresponding script.
 These JSON files are expected to contain entries indexed by sample size `N`, with fields such as `a` and `generating_vector`.
 
