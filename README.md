@@ -15,11 +15,13 @@ Main domain scripts include:
 `dumbbell_array_rqmc.py`
 `pacman_array_rqmc.py`
 `unit_sphere_array_rqmc.py`
+
 Experiment scripts include files such as:
 `run_unit_disk_experiments.py`
 `run_dumbbell_experiments.py`
 `run_pacman_experiments.py`
 `run_unit_sphere_experiments.py`
+
 The experiments in these files are run for sample sizes ranging from $4$ to $2^9$, but the user can extend the range of sample sizes by modifying `N_list`.
 
 
@@ -50,8 +52,11 @@ The required packages are listed in `requirements.txt`.
 
 ## Korobov Lattice generator files
 Some scripts use precomputed LatNet Builder Korobov lattice generators stored as JSON files.
+
 To run Array-RQMC for the gasket, dumbbell and unit disk examples, place `korobov_generators_dim2.json` in the same folder as the running scripts.
+
 For the unit sphere and pacman examples, place `korobov_generators_dim3.json` and `korobov_generators_dim4.json`, respectively, in the same folder as the corresponding script.
+
 These JSON files are expected to contain entries indexed by sample size `N`, with fields such as `a` and `generating_vector`.
 
 ## Running the main experiments
