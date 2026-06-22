@@ -51,7 +51,7 @@ Install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-The required packages are listed in `requirements.txt`.
+The required packages are listed in `requirements.txt`. In particular, the code requires packages such as `qmcpy` and `hilbertcurve`.
 
 ## Korobov Lattice generator files
 Some scripts use precomputed LatNet Builder Korobov lattice generators stored as JSON files.
