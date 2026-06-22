@@ -20,7 +20,8 @@ Experiment scripts include files such as:
 `run_dumbbell_experiments.py`
 `run_pacman_experiments.py`
 `run_unit_sphere_experiments.py`
-The experiments in thes files are run for sample sizes ranging from $4$ to $2^9$, but the user can extend the range of sample sizes by modifying `N_list`.
+The experiments in these files are run for sample sizes ranging from $4$ to $2^9$, but the user can extend the range of sample sizes by modifying `N_list`.
+
 
 Plotting scripts include files such as:
 `plot_unit_disk.py`
@@ -30,8 +31,8 @@ Plotting scripts include files such as:
 The Sobol-index diagnostic script is:
 `gasket_sobol_indices.py`
 This script computes column-wise total Sobol indices for the gasket WoS estimator under four methods:
-`mc`: standard plain Monte Carlo, no Hilbert sorting;
-`rqmc`: standard non-array RQMC, no Hilbert sorting;
+`mc`: standard Monte Carlo, no Hilbert sorting;
+`rqmc`: standard RQMC, no Hilbert sorting;
 `array_mc`: Array-MC with Hilbert sorting;
 `array_rqmc`: Array-RQMC with Hilbert sorting.
 
