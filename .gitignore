@@ -12,6 +12,7 @@ results_unit_disk_array/
 results_dumbbell_array/
 results_pacman_array/
 results_unit_sphere_array/
+results_gasket_sobol_indices/
 
 plots_gasket/
 plots_unit_disk/
