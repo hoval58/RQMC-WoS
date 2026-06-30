@@ -103,7 +103,7 @@ def wos_unit_disk_rqmc(x0, N, type, max_steps=1000, eps=1e-5, seed=None):
       lattice = qmcpy.Lattice(dimension=max_steps, randomize='SHIFT',seed=seed)
       points = lattice.gen_samples(n=N)
     else:
-        raise ValueError(f"Unknown qmc_type: {qmc_type}")
+        raise ValueError(f"Unknown qmc_type: {type}")
 
 
     for i in range(N):
