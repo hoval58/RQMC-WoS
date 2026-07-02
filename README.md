@@ -62,7 +62,7 @@ For the unit sphere and pacman examples, place `korobov_generators_dim3.json` an
 
 These JSON files are expected to contain entries indexed by sample size `N`, with fields such as `a` and `generating_vector`.
 
-We also include the scripts used to generate these JSON files. These scripts call functions from LatNet Builder and are provided in `korobov_generators_2d`, `korobov_generators_3d` and `korobov_generators_4d`.
+We also include the scripts used to generate these JSON files. These scripts call functions from LatNet Builder and are provided in `korobov_generators_2d.py`, `korobov_generators_3d.py` and `korobov_generators_4d.py`.
 
 ## Running the main experiments
 From the repository folder, run commands such as:
