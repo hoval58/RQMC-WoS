@@ -23,7 +23,7 @@ Experiment scripts include files such as:
 `run_pacman_experiments.py`
 `run_unit_sphere_experiments.py`
 
-The experiments in these files are run for sample sizes ranging from $4$ to $2^9$ so they complete on a workstation, but the user can extend the range of sample sizes by modifying `N_list`. The results in the papers use N_list up to $2^17$ with $100$ replicates, these were produced on a cluster.
+The experiments in these files are run for sample sizes ranging from $4$ to $2^9$ so they complete on a workstation, but the user can extend the range of sample sizes by modifying `N_list`. The results in the papers use N_list up to $2^{17}$ with $100$ replicates, these were produced on a cluster.
 
 Plotting scripts include files such as:
 `plot_gasket.py`
