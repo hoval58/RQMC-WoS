@@ -25,10 +25,7 @@ Experiment scripts include files such as:
 `run_pacman_experiments.py`
 `run_unit_sphere_experiments.py`
 
-The experiments in these files are run for sample sizes ranging from $4$ to $2^9$ so they complete on a workstation, but the user can extend the range of sample sizes by modifying `N_list`. The results in the papers use `N_list` up to $2^{17}$ with $100$ replicates, and were produced on a cluster.
-
-The variance and MSE reduction factors reported in the tables are computed from the same experiment scripts with `N_list` extended to $2^{17}$ and $100$ replicates,
-which were run on a cluster. Reproducing the exact table values therefore requires the full $2^{17}$ runs. 
+The experiments in these files run for sample sizes from $4$ to $2^9$ so they complete on a workstation; the user can extend the range by modifying `N_list`. All of the figures and tables in the papers use `N_list` up to $2^{17}$ with $100$ replicates and were produced on a cluster. Run at the default sizes, the scripts produce the same experiments over a reduced range of sample sizes (up to $2^9$); reproducing the published figures and the exact table values requires the full $2^{17}$ runs.
 
 Plotting scripts include files such as:
 `plot_gasket.py`
