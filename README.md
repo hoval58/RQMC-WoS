@@ -1,7 +1,9 @@
 # Randomized Quasi-Monte Carlo for Walk-on-Spheres 
 
+
+
 This repository contains Python code for experiments with Walk-on-Spheres (WoS), randomized quasi-Monte Carlo (RQMC), and Array-RQMC methods.
-The code compares standard Monte Carlo, standard RQMC and Array-RQMC on several examples involving two- and three-dimensional domains presented in two papers by Valérie N. P. Ho and Art B. Owen: ["Randomized Quasi-Monte Carlo for Walk on Spheres"](https://arxiv.org/abs/2605.08483) and ["Walk on Spheres and Array-RQMC"](https://arxiv.org/abs/2605.12844). 
+The code compares standard Monte Carlo, standard RQMC and Array-RQMC on several examples involving two- and three-dimensional domains presented in two papers by Valérie N. P. Ho and Art B. Owen: ["Randomized Quasi-Monte Carlo for Walk on Spheres"](https://arxiv.org/abs/2605.08483) and ["Walk on Spheres and Array-RQMC"](https://arxiv.org/abs/2605.12844). This repository provides the code and data needed to reproduce the numerical results (tables and figures) in those papers.
 
 It also contains the code used to compute the column-wise total Sobol indices for the gasket example (`gasket_sobol_indices.py`).
 
