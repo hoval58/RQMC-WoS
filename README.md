@@ -14,7 +14,9 @@ The following animation illustrates the Walk-on-Spheres
 successively sampling points on the largest sphere
 contained in the domain.
 
-https://github.com/user-attachments/assets/c2f5b9ba-9ab2-4133-a004-a524e61c394f
+https://github.com/user-attachments/assets/4ee0a410-2837-4ab4-8ded-18a382a70310
+
+
 
 
 ## Contents
