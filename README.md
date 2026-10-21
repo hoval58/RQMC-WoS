@@ -7,6 +7,15 @@ The code compares standard Monte Carlo, standard RQMC and Array-RQMC on several 
 
 It also contains the code used to compute the column-wise total Sobol indices for the gasket example (`gasket_sobol_indices.py`).
 
+## Walk-on-Spheres animation
+
+The following animation illustrates the Walk-on-Spheres
+(WoS) algorithm, which simulates a random walk by
+successively sampling points on the largest sphere
+contained in the domain.
+
+https://github.com/user-attachments/assets/c2f5b9ba-9ab2-4133-a004-a524e61c394f
+
 
 ## Contents
 The repository includes simulation, experiment-running, plotting, and Sobol indices computation. 
